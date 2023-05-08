@@ -128,6 +128,12 @@ public:
     {
         return *shared_ptr::m_object;
     }
+    /// \brief Checks if this shared_ptr references an object instance.
+    /// \return TRUE if this shared_ptr references an object instanec, false if it is nullptr.
+    operator bool() const
+    {
+        return shared_ptr::m_object != nullptr;
+    }
 
     // USE
     /// \brief Gets the number of shared_ptrs referencing the managed object instance.
@@ -157,12 +163,6 @@ public:
         {
             return false;
         }
-    }
-    /// \brief Checks if this shared_ptr references an object instance.
-    /// \return TRUE if this shared_ptr references an object instanec, false if it is nullptr.
-    operator bool() const
-    {
-        return shared_ptr::m_object != nullptr;
     }
 
 private:
